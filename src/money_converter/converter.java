@@ -19,7 +19,7 @@ public class converter {
 				break;
 			
 			case "TBD":
-				System.out.println("Seegundo Conversor ainda nao definido");
+				System.out.println("Seegundo Conversor ainda nao implementado");
 				break;
 		}
 		
