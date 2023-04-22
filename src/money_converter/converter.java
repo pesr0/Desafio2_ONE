@@ -2,6 +2,7 @@ package money_converter;
 
 public class converter {
 
+	
 	public static void main(String[] args) {
 		
 		int continueProgramMain; //initialize variable which will control the loop
@@ -11,15 +12,15 @@ public class converter {
 		
 		switch(chosen){
 			case "Conversor de Moeda":
-				boxConversion mainBox = new boxConversion(); //creates object which will invoke dialog boxes
+				boxInputs mainBox = new boxInputs(); //creates object which will invoke dialog boxes
 				String reference = mainBox.opcoesConversao(); //calls conversion options dialog
 				if(reference==null) return; //stop program if cancel button is clicked
 				float value = mainBox.currencyValueConverter(); // calls dialog box which the value will be inserted. also attribute that value to a string
-				mainBox.moneyConversion(value, reference); //calls method which converts the initial value and display it
+				new boxConversion().moneyConversion(value, reference); //calls method which converts the initial value and display it
 				break;
 			
-			case "TBD":
-				System.out.println("Seegundo Conversor ainda nao implementado");
+			case "Conversor de Horários":
+				System.out.println("Connversos de Horários");
 				break;
 		}
 		
@@ -30,4 +31,4 @@ public class converter {
 	
 	}
 		
-}
+} 
