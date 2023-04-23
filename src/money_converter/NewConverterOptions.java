@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 public class NewConverterOptions {
 
-	private String[] converterOptions = {"Coin Converter", "Time Converter"}; //set the list of options of conversion
 	private String[] coins = {"USD", "BRL"};
 	private String[] times = {"+1GMT", "+2GMT"};
 	private String[] options;
@@ -14,8 +13,8 @@ public class NewConverterOptions {
 	//opens a dialog where the user chooses the converter they want
 	private String converterOptionChosen;
 	
-	public void makeOption() {
-		converterOptionChosen = (String) JOptionPane.showInputDialog(null, "Opcoes Conversao", "Conversor BackEnd", JOptionPane.QUESTION_MESSAGE, null, this.converterOptions, null);
+	public void makeOption(String[] converterOptions) {
+		converterOptionChosen = (String) JOptionPane.showInputDialog(null, "Opcoes Conversao", "Conversor BackEnd", JOptionPane.QUESTION_MESSAGE, null, converterOptions, null);
 	
 		//If the coin converter is chosen these specific labels will be displayer
 		if(this.converterOptionChosen.equals("Coin Converter")) {
@@ -31,11 +30,6 @@ public class NewConverterOptions {
 		}
 	}
 
-	
-	public String[] getConverterOptions() { 
-		return this.converterOptions; //return converter options
-	}
-	
 	public String getInput() {
 		return this.labelInput; //returns input label chosen
 	}

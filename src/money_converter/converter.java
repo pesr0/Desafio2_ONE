@@ -5,13 +5,15 @@ public class converter {
 	
 	public static void main(String[] args) {
 		
+		String [] converterOptions = {"Coin Converter", "Time Converter", "lalal"};
+		
 		String version = new ChooseVersion().getVersion(); 
 		
 		if(version == "Challenge Version") {
 			
 			int continueProgramMain; //initialize variable which will control the loop
 			do{
-				String chosen = new OpenCloseChoices().firstChooser(new NewConverterOptions().getConverterOptions());
+				String chosen = new OpenCloseChoices().firstChooser(converterOptions);
 			
 			switch(chosen){
 				case "Coin Converter":
@@ -35,8 +37,8 @@ public class converter {
 		else if (version == "Evolved Version") {
 			
 			NewConverterOptions conversionOption = new NewConverterOptions();
-			conversionOption.makeOption();
-			NewConversionFrame windowFrame = new NewConversionFrame(conversionOption);
+			conversionOption.makeOption(converterOptions);
+			NewConversionFrame windowFrame = new NewConversionFrame(conversionOption, converterOptions);
 			windowFrame.setVisible(true);
 		}
 	

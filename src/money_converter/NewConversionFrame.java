@@ -10,7 +10,7 @@ public class NewConversionFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public NewConversionFrame(NewConverterOptions option) {
+	public NewConversionFrame(NewConverterOptions option, String[] converterOptions) {
 		getContentPane().setLayout(null);
 		 
 		setSize(400,230); //defines window size
@@ -62,7 +62,7 @@ public class NewConversionFrame extends JFrame {
 	    
 	    
 	    
-	    JComboBox<String> changeConverter = new JComboBox<>(option.getConverterOptions()); //adds the type of convertion selection
+	    JComboBox<String> changeConverter = new JComboBox<>(converterOptions); //adds the type of convertion selection
 	    changeConverter.setBounds(50, 150, 130, 30); //resize and reposition it 
 	    add(changeConverter); //add it to the window
 	    
