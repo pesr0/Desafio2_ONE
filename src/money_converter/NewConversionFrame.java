@@ -27,32 +27,32 @@ public class NewConversionFrame extends JFrame {
 	    inputLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of input label
 	    getContentPane().add(inputLabel); //adds input label to window
 	     
-		JTextField inputValue = new JTextField(); //input value field 
-	    inputValue.setBounds(fieldX, inputY, 200, 30); //defines size and position of input value field
-	    getContentPane().add(inputValue); //adds input value field to window
+		JTextField inputValueTextField = new JTextField(); //input value field 
+	    inputValueTextField.setBounds(fieldX, inputY, 200, 30); //defines size and position of input value field
+	    getContentPane().add(inputValueTextField); //adds input value field to window
 	    
 		JLabel outputLabel = new JLabel(option.getOutput()); //value field title
 		outputLabel.setBounds(labelX, outputY, 150, 30); //defines size and position of input output field
 		outputLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of output label
 	    getContentPane().add(outputLabel); //adds output label to window
 
-		JTextField outputValue = new JTextField(); //output value field 
-	    outputValue.setBounds(fieldX, outputY, 200, 30); //defines size and position of output value field
-	    getContentPane().add(outputValue); //adds output value field to window
+		JTextField outputValueTextField = new JTextField(); //output value field 
+	    outputValueTextField.setBounds(fieldX, outputY, 200, 30); //defines size and position of output value field
+	    getContentPane().add(outputValueTextField); //adds output value field to window
 	    
 	    
 	    
 		JLabel fromLabel = new JLabel("From: "); //From title
-		fromLabel.setBounds(60, 60, 70, 30); //defines size and position of from label
+		fromLabel.setBounds(50, 60, 40, 30); //defines size and position of from label
 		fromLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of from label
 	    getContentPane().add(fromLabel); //adds from label to window
 	    
 		JComboBox<String> inputType = new JComboBox<>(option.getOptions()); //adds options of conversion
-		inputType.setBounds(100, 60, 70, 30); //positions the option selection
+		inputType.setBounds(90, 60, 70, 30); //positions the option selection
 		add(inputType); //adds the combobox to the window
 		
 		JLabel toLabel = new JLabel("To: "); //To title
-		toLabel.setBounds(180, 60, 70, 30); //defines size and position of To label
+		toLabel.setBounds(175, 60, 25, 30); //defines size and position of To label
 		toLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of To label
 	    getContentPane().add(toLabel); //adds To label to window
 		
@@ -67,7 +67,7 @@ public class NewConversionFrame extends JFrame {
 	    add(changeConverter); //add it to the window
 	    
 	    JButton changeButton = new JButton("Change Converter"); //creates a button which will be abblt to change the converter
-	    changeButton.setBounds(210, 150, 150, 30); //resize and reposition it 
+	    changeButton.setBounds(190, 150, 150, 30); //resize and reposition it 
 	    getContentPane().add(changeButton); //adds it to the window
 	    
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //defines window behavior on close 

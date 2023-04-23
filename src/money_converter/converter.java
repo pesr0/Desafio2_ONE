@@ -5,7 +5,7 @@ public class converter {
 	
 	public static void main(String[] args) {
 		
-		String [] converterOptions = {"Coin Converter", "Time Converter", "lalal"};
+		String [] converterOptions = {"Coin Converter", "Time Converter"};
 		
 		String version = new ChooseVersion().getVersion(); 
 		
