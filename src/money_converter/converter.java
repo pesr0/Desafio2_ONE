@@ -20,8 +20,15 @@ public class converter {
 				break;
 			
 			case "Conversor de Horários":
-				System.out.println("Connversos de Horários");
+				System.out.println("Conversos de Horários");
 				break;
+				
+			case "new":
+				NewConverterOptions conversionOption = new NewConverterOptions();
+				NewConversionFrame windowFrame = new NewConversionFrame(conversionOption);
+				windowFrame.setVisible(true);
+				break;
+				
 		}
 		
 		continueProgramMain = new OpenCloseChoices().keepGoin(); //change the variable to get out of the loop if wanted
