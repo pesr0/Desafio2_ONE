@@ -8,14 +8,15 @@ public class NewConverterOptions {
 	private String[] coins = {"USD", "BRL"};
 	private String[] times = {"+1GMT", "+2GMT"};
 	private String[] options;
-	
-	//opens a dialog where the user chooses the converter they want
-	private String converterOptionChosen = (String) JOptionPane.showInputDialog(null, "Opcoes Conversao", "Conversor BackEnd", JOptionPane.QUESTION_MESSAGE, null, this.converterOptions, null);
-	
 	private String labelInput; //initialize the input label 
 	private String labelOutput; //initialize output label
-
-	{
+	
+	//opens a dialog where the user chooses the converter they want
+	private String converterOptionChosen;
+	
+	public void makeOption() {
+		converterOptionChosen = (String) JOptionPane.showInputDialog(null, "Opcoes Conversao", "Conversor BackEnd", JOptionPane.QUESTION_MESSAGE, null, this.converterOptions, null);
+	
 		//If the coin converter is chosen these specific labels will be displayer
 		if(this.converterOptionChosen.equals("Coin Converter")) {
 			this.labelInput = "Original Value:";
@@ -29,9 +30,10 @@ public class NewConverterOptions {
 			this.options = this.times;
 		}
 	}
+
 	
-	public String[] getConverterOptions() {
-		return this.converterOptions;
+	public String[] getConverterOptions() { 
+		return this.converterOptions; //return converter options
 	}
 	
 	public String getInput() {

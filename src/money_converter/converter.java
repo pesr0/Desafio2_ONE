@@ -11,10 +11,10 @@ public class converter {
 			
 			int continueProgramMain; //initialize variable which will control the loop
 			do{
-				String chosen = new OpenCloseChoices().firstChooser();
+				String chosen = new OpenCloseChoices().firstChooser(new NewConverterOptions().getConverterOptions());
 			
 			switch(chosen){
-				case "Conversor de Moeda":
+				case "Coin Converter":
 					boxInputs mainBox = new boxInputs(); //creates object which will invoke dialog boxes
 					String reference = mainBox.opcoesConversao(); //calls conversion options dialog
 					if(reference==null) return; //stop program if cancel button is clicked
@@ -22,7 +22,7 @@ public class converter {
 					new conversionClass().moneyConversion(value, reference); //calls method which converts the initial value and display it
 					break;
 				
-				case "Conversor de Horários":
+				case "Time Converter":
 					System.out.println("Conversos de Horários");
 					break;
 			}
@@ -35,6 +35,7 @@ public class converter {
 		else if (version == "Evolved Version") {
 			
 			NewConverterOptions conversionOption = new NewConverterOptions();
+			conversionOption.makeOption();
 			NewConversionFrame windowFrame = new NewConversionFrame(conversionOption);
 			windowFrame.setVisible(true);
 		}
