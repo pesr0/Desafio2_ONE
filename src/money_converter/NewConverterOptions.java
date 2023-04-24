@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class NewConverterOptions {
 
 	private String[] coins = {"USD", "BRL"};
-	private String[] times = {"+1GMT", "+2GMT"};
+	private String[] TBD = {"OP1", "OP2"};
 	private String[] options;
 	private String labelInput; //initialize the input label 
 	private String labelOutput; //initialize output label
@@ -23,10 +23,10 @@ public class NewConverterOptions {
 			this.options = this.coins;
 		}
 		//if the time converter was chosen ....
-		else if (this.converterOptionChosen.equals("Time Converter")) {
-			this.labelInput = "Original Time:";
-			this.labelOutput = "Converted Time:";
-			this.options = this.times;
+		else if (this.converterOptionChosen.equals("TBD")) {
+			this.labelInput = "Original TBD:";
+			this.labelOutput = "Converted TBD:";
+			this.options = this.TBD;
 		}
 	}
 

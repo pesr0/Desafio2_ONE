@@ -5,7 +5,7 @@ public class converter {
 	
 	public static void main(String[] args) {
 		
-		String [] converterOptions = {"Coin Converter", "Time Converter"};
+		String [] converterOptions = {"Coin Converter", "TBD"};
 		
 		String version = new ChooseVersion().getVersion(); 
 		
@@ -24,8 +24,8 @@ public class converter {
 					new conversionClass().moneyConversion(value, reference); //calls method which converts the initial value and display it
 					break;
 				
-				case "Time Converter":
-					System.out.println("Conversos de Horários");
+				case "TBD":
+					System.out.println("TBD");
 					break;
 			}
 			

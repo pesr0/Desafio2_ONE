@@ -5,6 +5,8 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class NewConversionFrame extends JFrame {
 	
@@ -14,8 +16,9 @@ public class NewConversionFrame extends JFrame {
 		getContentPane().setLayout(null);
 		 
 		setSize(400,230); //defines window size
-		setResizable(false);
+		setResizable(false); //disable window resizing
 		setTitle("Conversor"); //defines window title
+		ConvertClass exchange = new ConvertClass();
 		
 		int labelX = 30;
 		int fieldX = 160;
@@ -67,10 +70,26 @@ public class NewConversionFrame extends JFrame {
 	    add(changeConverter); //add it to the window
 	    
 	    JButton changeButton = new JButton("Change Converter"); //creates a button which will be abblt to change the converter
-	    changeButton.setBounds(190, 150, 150, 30); //resize and reposition it 
+	    changeButton.setBounds(180, 150, 150, 30); //resize and reposition it 
 	    getContentPane().add(changeButton); //adds it to the window
 	    
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //defines window behavior on close 
+		
+		inputValueTextField.getDocument().addDocumentListener(new DocumentListener() {
+		    public void changedUpdate(DocumentEvent e) {
+		    	//not implemented
+		    }
+		    public void removeUpdate(DocumentEvent e) {
+				exchange.recieveInputValue(inputValueTextField.getText());
+				exchange.changeValue();
+				outputValueTextField.setText(exchange.giveOutputValue());
+		    }
+		    public void insertUpdate(DocumentEvent e) {
+				exchange.recieveInputValue(inputValueTextField.getText());
+				exchange.changeValue();
+				outputValueTextField.setText(exchange.giveOutputValue());
+		    }
+		});
 	}
 	
 }
