@@ -75,14 +75,14 @@ public class NewConversionFrame extends JFrame {
 	    
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //defines window behavior on close 
 		
-		inputValueTextField.getDocument().addDocumentListener(new DocumentListener() {
+		inputValueTextField.getDocument().addDocumentListener(new DocumentListener() { //listener to when the textfield is changed
 		    public void changedUpdate(DocumentEvent e) {
 		    	//not implemented
 		    }
 		    public void removeUpdate(DocumentEvent e) {
-				exchange.recieveInputValue(inputValueTextField.getText());
-				exchange.changeValue();
-				outputValueTextField.setText(exchange.giveOutputValue());
+				exchange.recieveInputValue(inputValueTextField.getText()); //pass the field value to the new class
+				exchange.changeValue(); //method to change the value passed
+				outputValueTextField.setText(exchange.giveOutputValue()); //return the value changed to new output field
 		    }
 		    public void insertUpdate(DocumentEvent e) {
 				exchange.recieveInputValue(inputValueTextField.getText());

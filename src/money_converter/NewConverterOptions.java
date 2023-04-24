@@ -39,6 +39,6 @@ public class NewConverterOptions {
 	}
 	
 	public String[] getOptions() {
-		return this.options;
+		return this.options; //return the options of conversion 
 	}
 }

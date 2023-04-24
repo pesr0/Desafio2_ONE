@@ -1,6 +1,6 @@
 package money_converter;
 
-public class converter {
+public class Converter {
 
 	
 	public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class converter {
 		
 		String version = new ChooseVersion().getVersion(); 
 		
-		if(version == "Challenge Version") {
+		if(version == "Challenge Version") { //challlenge proposed program
 			
 			int continueProgramMain; //initialize variable which will control the loop
 			do{
@@ -34,12 +34,12 @@ public class converter {
 			}while(continueProgramMain == 0);
 		}
 		
-		else if (version == "Evolved Version") {
+		else if (version == "Evolved Version") { //evolved program
 			
 			NewConverterOptions conversionOption = new NewConverterOptions();
-			conversionOption.makeOption(converterOptions);
-			NewConversionFrame windowFrame = new NewConversionFrame(conversionOption, converterOptions);
-			windowFrame.setVisible(true);
+			conversionOption.makeOption(converterOptions); //opena  dialog where the converter will be chosen
+			NewConversionFrame windowFrame = new NewConversionFrame(conversionOption, converterOptions); //creates the converter frame
+			windowFrame.setVisible(true); //set the frame visible
 		}
 	
 	}
