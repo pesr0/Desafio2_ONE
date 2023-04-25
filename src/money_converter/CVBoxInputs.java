@@ -2,7 +2,7 @@ package money_converter;
 
 import javax.swing.JOptionPane;
 
-public class boxInputs {
+public class CVBoxInputs {
 	private String[] options = {"Reais p/ Dólares", "Reais p/ Euros", "Reais p/ Libras", "Reais p/ Yenes", "Reais p/ Won Coreano", "Dólares p/ Reais", "Euros p/ Reais", "Libras p/ Reais"};
 	
 	//	method which calls the first dialog box, with conversion options

@@ -2,7 +2,7 @@ package money_converter;
 
 import javax.swing.JOptionPane;
 
-public class NewConverterOptions {
+public class MVConverterOptions {
 
 	private String[] coins = {"USD", "BRL"};
 	private String[] TBD = {"OP1", "OP2"};

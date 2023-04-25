@@ -2,7 +2,7 @@ package money_converter;
 
 import javax.swing.JOptionPane;
 
-public class OpenCloseChoices {
+public class CVOpenCloseChoices {
 	
 	public String firstChooser(String[] options) {		
 		return (String) JOptionPane.showInputDialog(null, "\"Escolha a função desejada:",  "BackEnd Converter", JOptionPane.QUESTION_MESSAGE, null, options, null);

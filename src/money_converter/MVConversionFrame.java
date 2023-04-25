@@ -8,17 +8,17 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-public class NewConversionFrame extends JFrame {
+public class MVConversionFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public NewConversionFrame(NewConverterOptions option, String[] converterOptions) {
+	public MVConversionFrame(MVConverterOptions option, String[] converterOptions) {
 		getContentPane().setLayout(null);
 		 
 		setSize(400,230); //defines window size
 		setResizable(false); //disable window resizing
 		setTitle("Conversor"); //defines window title
-		ConvertClass exchange = new ConvertClass();
+		MVConvertClass exchange = new MVConvertClass();
 		
 		int labelX = 30;
 		int fieldX = 160;

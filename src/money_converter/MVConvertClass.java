@@ -1,6 +1,6 @@
 package money_converter;
 
-public class ConvertClass {
+public class MVConvertClass {
 	private String inputValue;
 	private String outputValue;
 	

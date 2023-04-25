@@ -2,7 +2,7 @@ package money_converter;
 
 import javax.swing.JOptionPane;
 
-public class ChooseVersion {
+public class AVChooseVersion {
 	private String[] versionOptions = {"Challenge Version", "Evolved Version"};
 	
 	

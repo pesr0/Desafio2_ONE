@@ -2,7 +2,7 @@ package money_converter;
 
 import javax.swing.JOptionPane;
 
-public class conversionClass {
+public class TempConversionClass {
 	
 //	method which receives initial value to transform and display it into new converted value	
 	public void moneyConversion(float value, String ref) {
