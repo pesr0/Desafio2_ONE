@@ -26,4 +26,16 @@ public class AVLabels {
 	}
 	
 	
+	private String[] inputLabel = {"Original Value: ", "Original Sncd: "}; //MV ConverterOptions & MVConversionFrame
+	private String[] outputLabel = {"Converted Value: ","Converted Scnd: "}; //MV ConverterOptions & MVConversionFrame
+
+	public String[] getInputLabel() { //MV ConverterOptions & MVConversionFrame
+		return this.inputLabel;
+	}
+
+	public String[] getOutputLabel() { //MV ConverterOptions & MVConversionFrame
+		return this.outputLabel;
+	}
+	
+	
 }

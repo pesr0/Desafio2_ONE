@@ -1,5 +1,9 @@
 package money_converter;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -14,7 +18,8 @@ public class MVConversionFrame extends JFrame {
 	
 	public MVConversionFrame(MVConverterOptions option, String[] converterOptions) {
 		getContentPane().setLayout(null);
-		 
+		
+		AVLabels labels = new AVLabels();
 		setSize(400,230); //defines window size
 		setResizable(false); //disable window resizing
 		setTitle("Converter"); //defines window title
@@ -90,6 +95,27 @@ public class MVConversionFrame extends JFrame {
 				outputValueTextField.setText(exchange.giveOutputValue());
 		    }
 		});
-	}
 	
+		changeButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        String temp = (String) changeConverter.getSelectedItem();
+		        if (temp == labels.getConversionOptions()[0]) {
+		        	inputLabel.setText(labels.getInputLabel()[0]);
+		        	outputLabel.setText(labels.getOutputLabel()[0]);
+		        	inputType.setModel(new DefaultComboBoxModel<>(labels.getCoinsConversionOptions()));
+		        	outputType.setModel(new DefaultComboBoxModel<>(labels.getCoinsConversionOptions()));
+		        	
+		        	
+		        }
+		        if (temp == labels.getConversionOptions()[1]) {
+		        	inputLabel.setText(labels.getInputLabel()[1]);
+		        	outputLabel.setText(labels.getOutputLabel()[1]);
+		        	inputType.setModel(new DefaultComboBoxModel<>(labels.getScndConversionOptions()));
+		        	outputType.setModel(new DefaultComboBoxModel<>(labels.getScndConversionOptions()));
+		        }
+		    }
+		});
+
+
+	}
 }

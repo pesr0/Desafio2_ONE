@@ -6,8 +6,6 @@ public class MVConverterOptions {
 	
 	AVLabels labels = new AVLabels();
 
-	private String[] coins = labels.getCoinsConversionOptions(); //brings coins conversion possibility
-	private String[] scnd = labels.getScndConversionOptions(); //brings second converter possibilities
 	private String[] options;
 	private String labelInput; //initialize the input label 
 	private String labelOutput; //initialize output label
@@ -20,15 +18,15 @@ public class MVConverterOptions {
 	
 		//If the coin converter is chosen these specific labels will be displayer
 		if(this.converterOptionChosen.equals(labels.getConversionOptions()[0])) { //coin converter
-			this.labelInput = "Original Value:";
-			this.labelOutput = "Converted Value:";
-			this.options = this.coins;
+			this.labelInput = labels.getInputLabel()[0];
+			this.labelOutput = labels.getOutputLabel()[0];
+			this.options = labels.getCoinsConversionOptions(); //brings coins conversion possibility
 		}
 		//if the time converter was chosen ....
 		else if (this.converterOptionChosen.equals(labels.getConversionOptions()[1])) { //second converter
-			this.labelInput = "Original scnd:";
-			this.labelOutput = "Converted scnd:";
-			this.options = this.scnd;
+			this.labelInput = labels.getInputLabel()[1];
+			this.labelOutput = labels.getOutputLabel()[1];
+			this.options = labels.getScndConversionOptions(); //brings second converter possibilities
 		}
 	}
 
