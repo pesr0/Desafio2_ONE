@@ -7,12 +7,12 @@ public class CVBoxInputs {
 	
 	//	method which calls the first dialog box, with conversion options
 	public String opcoesConversao() {
-		return (String) JOptionPane.showInputDialog(null, "Opcoes Conversao", "Conversor BackEnd", JOptionPane.QUESTION_MESSAGE, null, this.options, null);
+		return (String) JOptionPane.showInputDialog(null, "Conversion Options", "Conversor BackEnd", JOptionPane.QUESTION_MESSAGE, null, this.options, null);
 	}
 	
 //	method which calls the second box to insert the value and return its value
 	public float currencyValueConverter() {
-		String input = JOptionPane.showInputDialog("Insira o Valor Numerico a ser Convertido:");
+		String input = JOptionPane.showInputDialog("Inserted the value to be converted:");
 	
 //	verifies inserted value, return when it is a number		
 		while(true) {
@@ -20,7 +20,7 @@ public class CVBoxInputs {
 				float returner = Float.parseFloat(input);
 				return returner;
 			} catch(NumberFormatException e){
-				input = JOptionPane.showInputDialog("O valor precisa ser um numero:");
+				input = JOptionPane.showInputDialog("Value Must be a Number:");
 			}
 		}
 	}

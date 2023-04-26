@@ -5,15 +5,17 @@ public class MainConverter {
 	
 	public static void main(String[] args) {
 		
-		String [] converterOptions = {"Coin Converter", "TBD"};
+		AVLabels labels = new AVLabels();		
+		
+		String [] conversionOptions = labels.getConversionOptions();
 		
 		String version = new AVChooseVersion().getVersion(); 
 		
-		if(version == "Challenge Version") { //challenge proposed program
+		if(version == labels.getConverterVersions()[0]) { //challenge version program
 			
 			int continueProgramMain; //initialize variable which will control the loop
 			do{
-				String chosen = new CVOpenCloseChoices().firstChooser(converterOptions);
+				String chosen = new CVOpenCloseChoices().firstChooser(conversionOptions);
 			
 			switch(chosen){
 				case "Coin Converter":
@@ -24,8 +26,8 @@ public class MainConverter {
 					new TempConversionClass().moneyConversion(value, reference); //calls method which converts the initial value and display it
 					break;
 				
-				case "TBD":
-					System.out.println("TBD");
+				case "Second Converter":
+					System.out.println("scnd");
 					break;
 			}
 			
@@ -34,11 +36,11 @@ public class MainConverter {
 			}while(continueProgramMain == 0);
 		}
 		
-		else if (version == "Evolved Version") { //evolved program
+		else if (version == labels.getConverterVersions()[1]) { //evolved program
 			
-			MVConverterOptions conversionOption = new MVConverterOptions();
-			conversionOption.makeOption(converterOptions); //opens a dialog where the converter will be chosen
-			MVConversionFrame windowFrame = new MVConversionFrame(conversionOption, converterOptions); //creates the converter frame
+			MVConverterOptions converterOptions = new MVConverterOptions();
+			converterOptions.makeOption(conversionOptions); //opens a dialog where the converter will be chosen
+			MVConversionFrame windowFrame = new MVConversionFrame(converterOptions, conversionOptions); //creates the converter frame
 			windowFrame.setVisible(true); //set the frame visible	
 		}
 	

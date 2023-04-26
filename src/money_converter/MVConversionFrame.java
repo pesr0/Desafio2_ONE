@@ -17,8 +17,8 @@ public class MVConversionFrame extends JFrame {
 		 
 		setSize(400,230); //defines window size
 		setResizable(false); //disable window resizing
-		setTitle("Conversor"); //defines window title
-		MVConvertClass exchange = new MVConvertClass();
+		setTitle("Converter"); //defines window title
+		AVConvertClass exchange = new AVConvertClass();
 		
 		int labelX = 30;
 		int fieldX = 160;

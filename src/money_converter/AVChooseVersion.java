@@ -3,10 +3,13 @@ package money_converter;
 import javax.swing.JOptionPane;
 
 public class AVChooseVersion {
-	private String[] versionOptions = {"Challenge Version", "Evolved Version"};
+	
+	AVLabels labels = new AVLabels();
+	
+	private String[] versionOptions = labels.getConverterVersions(); //string with challenge version and my version from AVLabels
 	
 	
 	public String getVersion() {
-	return (String) JOptionPane.showInputDialog(null, "\"Escolha a função desejada:",  "BackEnd Converter", JOptionPane.QUESTION_MESSAGE, null, this.versionOptions, null);
+	return (String) JOptionPane.showInputDialog(null, "\"Choose the program version:",  "BackEnd Converter", JOptionPane.QUESTION_MESSAGE, null, this.versionOptions, null);
 	}
 }
