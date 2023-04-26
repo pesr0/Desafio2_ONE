@@ -3,7 +3,7 @@ package money_converter;
 public class AVLabels {
 	
 	private String[] conversionOptions = {"Coin Converter", "Second Converter"}; //mainConverter
-	private String[] converterVersions = {"Challenge Version", "My Version"}; //mainConverter & AVChooserVersion
+	private String[] converterVersions = {"Challenge Version", "My Version --In Progress--"}; //mainConverter & AVChooserVersion
 	
 	public String[] getConversionOptions() { //mainConverter & AVChooserVersion
 		return this.conversionOptions;

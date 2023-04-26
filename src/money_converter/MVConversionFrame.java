@@ -99,6 +99,8 @@ public class MVConversionFrame extends JFrame {
 		changeButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        String temp = (String) changeConverter.getSelectedItem();
+		        inputValueTextField.setText("");
+		        outputValueTextField.setText("");
 		        if (temp == labels.getConversionOptions()[0]) {
 		        	inputLabel.setText(labels.getInputLabel()[0]);
 		        	outputLabel.setText(labels.getOutputLabel()[0]);
