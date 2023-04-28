@@ -26,8 +26,8 @@ public class MainConverter {
 					new TempConversionClass().moneyConversion(value, reference); //calls method which converts the initial value and display it
 					break;
 				
-				case "Second Converter":
-					System.out.println("scnd");
+				case "Second Converter --In Progress--":
+					System.out.println("test");
 					break;
 			}
 			
