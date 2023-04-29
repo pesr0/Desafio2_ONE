@@ -7,15 +7,13 @@ public class MainConverter {
 		
 		AVLabels labels = new AVLabels();		
 		
-		String [] conversionOptions = labels.getConversionOptions();
-		
 		String version = new AVChooseVersion().getVersion(); 
 		
-		if(version == labels.getConverterVersions()[0]) { //challenge version program
+		if(version == labels.getDriverConverterVersions()[0]) { //challenge version program
 			
 			int continueProgramMain; //initialize variable which will control the loop
 			do{
-				String chosen = new CVOpenCloseChoices().firstChooser(conversionOptions);
+				String chosen = new CVOpenCloseChoices().firstChooser();
 			
 			switch(chosen){
 				case "Coin Converter":
@@ -36,11 +34,11 @@ public class MainConverter {
 			}while(continueProgramMain == 0);
 		}
 		
-		else if (version == labels.getConverterVersions()[1]) { //evolved program
+		else if (version == labels.getDriverConverterVersions()[1]) { //evolved program
 			
 			MVConverterOptions converterOptions = new MVConverterOptions();
-			converterOptions.makeOption(conversionOptions); //opens a dialog where the converter will be chosen
-			MVConversionFrame windowFrame = new MVConversionFrame(converterOptions, conversionOptions); //creates the converter frame
+			converterOptions.chooseConverter(); //opens a dialog where the converter will be chosen
+			MVConversionFrame windowFrame = new MVConversionFrame(converterOptions); //creates the converter frame
 			windowFrame.setVisible(true); //set the frame visible	
 		}
 	

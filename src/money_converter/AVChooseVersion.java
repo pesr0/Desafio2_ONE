@@ -6,7 +6,7 @@ public class AVChooseVersion {
 	
 	AVLabels labels = new AVLabels();
 	
-	private String[] versionOptions = labels.getConverterVersions(); //string with challenge version and my version from AVLabels
+	private String[] versionOptions = labels.getDriverConverterVersions(); //string with challenge version and my version from AVLabels
 	
 	
 	public String getVersion() {

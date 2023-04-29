@@ -4,8 +4,11 @@ import javax.swing.JOptionPane;
 
 public class CVOpenCloseChoices {
 	
-	public String firstChooser(String[] options) {		
-		return (String) JOptionPane.showInputDialog(null, "\"Choose the desired function:",  "BackEnd Converter", JOptionPane.QUESTION_MESSAGE, null, options, null);
+	AVLabels labels = new AVLabels();
+	String[] converterOptions = labels.getDriverConverterOptions();
+	
+	public String firstChooser() {		
+		return (String) JOptionPane.showInputDialog(null, "\"Choose the desired function:",  "BackEnd Converter", JOptionPane.QUESTION_MESSAGE, null, converterOptions, null);
 	}
 	
 	public int keepGoin() {

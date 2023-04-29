@@ -1,44 +1,43 @@
 package money_converter;
 
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 public class MVConverterOptions {
 	
 	AVLabels labels = new AVLabels();
 
-	private String[] options;
-	private String labelInput; //initialize the input label 
-	private String labelOutput; //initialize output label
+	private String[] chosenConvertionOptions;
+	private String chosenLabelInput; //initialize the input label 
+	private String chosenLabelOutput; //initialize output label
+	private String[][] importedConversionOptions = labels.getDriverConversionOptions(); //brings coins conversion possibility
+	//private String[] importedScndConversionOptions = labels.getDriverScndConversionOptions(); //brings second converter possibilities
 	
 	//opens a dialog where the user chooses the converter they want
 	private String converterOptionChosen;
 	
-	public void makeOption(String[] converterOptions) {
+	public void chooseConverter() {
+		String[] converterOptions = labels.getDriverConverterOptions();
 		converterOptionChosen = (String) JOptionPane.showInputDialog(null, "Conversion Options", "BackEnd Converter", JOptionPane.QUESTION_MESSAGE, null, converterOptions, null);
-	
+		
+		int index = Arrays.asList(converterOptions).indexOf(converterOptionChosen);
 		//If the coin converter is chosen these specific labels will be displayer
-		if(this.converterOptionChosen.equals(labels.getConversionOptions()[0])) { //coin converter
-			this.labelInput = labels.getInputLabel()[0];
-			this.labelOutput = labels.getOutputLabel()[0];
-			this.options = labels.getCoinsConversionOptions(); //brings coins conversion possibility
-		}
-		//if the time converter was chosen ....
-		else if (this.converterOptionChosen.equals(labels.getConversionOptions()[1])) { //second converter
-			this.labelInput = labels.getInputLabel()[1];
-			this.labelOutput = labels.getOutputLabel()[1];
-			this.options = labels.getScndConversionOptions(); //brings second converter possibilities
-		}
+			this.chosenLabelInput = labels.getDriverInputLabel()[index];
+			this.chosenLabelOutput = labels.getDriverOutputLabel()[index];
+			this.chosenConvertionOptions = importedConversionOptions[index]; //brings conversion possibility
+
 	}
 
-	public String getInput() {
-		return this.labelInput; //returns input label chosen
+	public String getChosenInputLabel() {
+		return this.chosenLabelInput; //returns input label chosen
 	}
 	
-	public String getOutput() {
-		return this.labelOutput; //returns output label chosen
+	public String getChosenOutputLabel() {
+		return this.chosenLabelOutput; //returns output label chosen
 	}
 	
-	public String[] getOptions() {
-		return this.options; //return the options of conversion 
+	public String[] getChosenConvertionOptions() {
+		return this.chosenConvertionOptions; //return the options of conversion 
 	}
 }
