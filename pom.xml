@@ -4,7 +4,6 @@
   <artifactId>conversor_moedas_challengeONE_backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>conversor_moedas_challengeONE_backend</name>
-<<<<<<< HEAD
   
   <dependencies>
           <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
@@ -15,8 +14,6 @@
 	</dependency>
   </dependencies>
   
-=======
->>>>>>> 715b3840eeffe112ef5eb812c3504c5eecc67f7a
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>

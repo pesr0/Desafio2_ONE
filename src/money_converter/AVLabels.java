@@ -4,16 +4,9 @@ public class AVLabels {
 	private String[] driverConverterOptions = {"Coin Converter", "Second Converter --In Progress--"}; //mainConverter
 	private String[] driverConverterVersions = {"Challenge Version", "My Version --In Progress--"}; //mainConverter & AVChooserVersion
 	
-<<<<<<< HEAD
+
 	public String[] getDriverConverterOptions() { //mainConverter & AVChooserVersion
 		return this.driverConverterOptions;
-=======
-	private String[] conversionOptions = {"Coin Converter", "Second Converter --In Progress--"}; //mainConverter
-	private String[] converterVersions = {"Challenge Version", "My Version --In Progress--"}; //mainConverter & AVChooserVersion
-	
-	public String[] getConversionOptions() { //mainConverter & AVChooserVersion
-		return this.conversionOptions;
->>>>>>> 715b3840eeffe112ef5eb812c3504c5eecc67f7a
 	}
 	
 	public String[] getDriverConverterVersions() { //mainConverter
