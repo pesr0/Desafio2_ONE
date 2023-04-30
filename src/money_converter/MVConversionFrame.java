@@ -9,8 +9,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 public class MVConversionFrame extends JFrame {
 	
@@ -75,8 +73,12 @@ public class MVConversionFrame extends JFrame {
 	    outputType.setBounds(200, 60, 70, 30); //positions the option selection
 	    add(outputType); //adds the combobox to the window
 	    
+	    JButton convertButton = new JButton("Convert"); //creates a button which will convert values
+	    convertButton.setBounds(280, 60, 90, 30); //resize and reposition it 
+	    getContentPane().add(convertButton); //adds it to the window
 	    
 	    
+
 	    JComboBox<String> changeConverter = new JComboBox<>(converterOptions); //adds the type of convertion selection
 	    changeConverter.setBounds(50, 150, 130, 30); //resize and reposition it 
 	    add(changeConverter); //add it to the window
@@ -87,19 +89,15 @@ public class MVConversionFrame extends JFrame {
 	    
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //defines window behavior on close 
 		
-		inputValueTextField.getDocument().addDocumentListener(new DocumentListener() { //listener to when the textfield is changed
-		    public void changedUpdate(DocumentEvent e) {
-		    	//not implemented
-		    }
-		    public void removeUpdate(DocumentEvent e) {
-				converter.recieveInputValue(inputValueTextField.getText(),(String) inputType.getSelectedItem(),(String) outputType.getSelectedItem()); //pass the field value to the new class
-				converter.changeValue(); //method to change the value passed
-				outputValueTextField.setText(converter.giveOutputValue()); //return the value changed to new output field
-		    }
-		    public void insertUpdate(DocumentEvent e) {
-				converter.recieveInputValue(inputValueTextField.getText(), (String) inputType.getSelectedItem(),(String) outputType.getSelectedItem());
-				converter.changeValue();
-				outputValueTextField.setText(converter.giveOutputValue());
+		convertButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+				//converter.recieveInputValue(inputValueTextField.getText(),(String) inputType.getSelectedItem(),(String) outputType.getSelectedItem()); //pass the field value to the new class
+				String selectedInputType = (String) inputType.getSelectedItem();
+				String selectedOutputType = (String) outputType.getSelectedItem();
+		    	String insertedValue = inputValueTextField.getText();
+		    	String returnValue = converter.changeValue(selectedOutputType, selectedInputType, insertedValue); //method to change the value passed
+				outputValueTextField.setText(returnValue); //return the value changed to new output field
+
 		    }
 		});
 	

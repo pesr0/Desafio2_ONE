@@ -39,7 +39,7 @@ public class MainConverter {
 			MVConverterOptions converterOptions = new MVConverterOptions();
 			converterOptions.chooseConverter(); //opens a dialog where the converter will be chosen
 			MVConversionFrame windowFrame = new MVConversionFrame(converterOptions); //creates the converter frame
-			windowFrame.setVisible(true); //set the frame visible	
+			windowFrame.setVisible(true); //set the frame visible
 		}
 	
 	}

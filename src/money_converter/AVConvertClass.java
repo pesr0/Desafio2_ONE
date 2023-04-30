@@ -2,9 +2,13 @@ package money_converter;
 
 import java.io.*;
 import okhttp3.*;
+import org.json.JSONObject;
 
-public class AVConvertClass {	
-	  public void convert(String to, String from, String amount) throws IOException{
+public class AVConvertClass {
+	
+	private double resultConversion;
+	
+	public void convert(String to, String from, String amount) throws IOException{
 	    OkHttpClient client = new OkHttpClient().newBuilder().build();
 
 	    Request request = new Request.Builder()
@@ -13,28 +17,24 @@ public class AVConvertClass {
 	      .method("GET", null)
 	      .build();
 	    Response response = client.newCall(request).execute();
-	    System.out.println(response.body().string());
+	    String jsonString=response.body().string();
+	    JSONObject jsonObject = new JSONObject(jsonString);
+	    this.resultConversion = jsonObject.getDouble("result");
 		}
 	
 	
-	private String inputValue;
-	private String outputValue;
-	private String enterType;
-	private String exitType;
-	
-	
-	public void recieveInputValue(String value, String inputType, String outputType) {
-		this.inputValue = value;
-		this.enterType = inputType;
-		this.exitType = outputType;
-	}
-	
-	public void changeValue() {
+	public String changeValue(String to, String from, String amount) {
+		try {
+			this.convert(to, from, amount);
+			System.out.println(this.resultConversion);
+			
+		}
+		catch (IOException e) {
+			System.out.println("Exception Error");
+			return "ERROR, TRY AGAIN";
+		}
 		
-	}
-	
-	public String giveOutputValue() {
-		return this.outputValue;
+		return Double.toString(resultConversion);
 	}
 	
 }
