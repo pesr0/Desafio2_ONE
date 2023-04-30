@@ -35,10 +35,7 @@ public class MainConverter {
 		}
 		
 		else if (version == labels.getDriverConverterVersions()[1]) { //evolved program
-			
-			MVConverterOptions converterOptions = new MVConverterOptions();
-			converterOptions.chooseConverter(); //opens a dialog where the converter will be chosen
-			MVConversionFrame windowFrame = new MVConversionFrame(converterOptions); //creates the converter frame
+			MVConversionFrame windowFrame = new MVConversionFrame(); //creates the converter frame
 			windowFrame.setVisible(true); //set the frame visible
 		}
 	

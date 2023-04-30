@@ -14,7 +14,7 @@ public class MVConversionFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public MVConversionFrame(MVConverterOptions converterFrameOptions) {
+	public MVConversionFrame() {
 		getContentPane().setLayout(null);
 		
 		AVLabels labels = new AVLabels();
@@ -31,9 +31,9 @@ public class MVConversionFrame extends JFrame {
 		int inputY = 20;
 		int outputY = 100;
 		
-		String chosenInputLabel = converterFrameOptions.getChosenInputLabel(); //brings of MVConverterOptions Inputs Labels
-		String chosenOutputLabel = converterFrameOptions.getChosenOutputLabel(); //brings of MVConverterOptions Output Labels
-		String[] convertionOption = converterFrameOptions.getChosenConvertionOptions(); //brings of MVConverterOptions Convertion Option
+		String chosenInputLabel = labels.getDriverInputLabel()[0]; //brings of MVConverterOptions Inputs Labels
+		String chosenOutputLabel = labels.getDriverOutputLabel()[0]; //brings of MVConverterOptions Output Labels
+		String[] convertionOption = labels.getDriverConversionOptions()[0]; //brings of MVConverterOptions Convertion Option
 		
 		JLabel inputLabel = new JLabel(chosenInputLabel); //value field title
 	    inputLabel.setBounds(labelX, inputY, 100, 30); //defines size and position of input label field
