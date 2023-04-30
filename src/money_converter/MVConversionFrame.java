@@ -22,6 +22,7 @@ public class MVConversionFrame extends JFrame {
 		
 		setSize(400,230); //defines window size
 		setResizable(false); //disable window resizing
+		setLocationRelativeTo(null);
 		setTitle("Converter"); //defines window title
 		AVConvertClass converter = new AVConvertClass();
 		

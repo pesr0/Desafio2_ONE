@@ -24,7 +24,7 @@ public class MainConverter {
 					new TempConversionClass().moneyConversion(value, reference); //calls method which converts the initial value and display it
 					break;
 				
-				case "Second Converter --In Progress--":
+				case "Temperature Converter":
 					System.out.println("test");
 					break;
 			}

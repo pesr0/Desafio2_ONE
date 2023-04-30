@@ -1,7 +1,7 @@
 package money_converter;
 
 public class AVLabels {
-	private String[] driverConverterOptions = {"Coin Converter", "Second Converter --In Progress--"}; //mainConverter
+	private String[] driverConverterOptions = {"Coin Converter", "Temperature Converter"}; //mainConverter
 	private String[] driverConverterVersions = {"Challenge Version", "My Version"}; //mainConverter & AVChooserVersion
 	
 
@@ -28,8 +28,8 @@ public class AVLabels {
 	
 	
 	
-	private String[] driverInputLabel = {"Original Value: ", "Original Sncd: "}; //MV ConverterOptions & MVConversionFrame
-	private String[] driverOutputLabel = {"Converted Value: ","Converted Scnd: "}; //MV ConverterOptions & MVConversionFrame
+	private String[] driverInputLabel = {"Original Value: ", "Original Temp: "}; //MV ConverterOptions & MVConversionFrame
+	private String[] driverOutputLabel = {"Converted Value: ","Converted Temp: "}; //MV ConverterOptions & MVConversionFrame
 
 	public String[] getDriverInputLabel() { //MV ConverterOptions & MVConversionFrame
 		return this.driverInputLabel;

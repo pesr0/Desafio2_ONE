@@ -35,7 +35,7 @@ public class AVConvertClass {
 		if(to == "K") {
 			return Double.toString(dAmount);
 		}
-		else if(to =="ºC") {
+		else if(to =="°C") {
 			return Double.toString(dAmount - 273.15);
 		}
 		else {
