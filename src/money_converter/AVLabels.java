@@ -4,7 +4,6 @@ public class AVLabels {
 	private String[] driverConverterOptions = {"Coin Converter", "Temperature Converter"}; //mainConverter
 	private String[] driverConverterVersions = {"Challenge Version", "My Version"}; //mainConverter & AVChooserVersion
 	
-
 	public String[] getDriverConverterOptions() { //mainConverter & AVChooserVersion
 		return this.driverConverterOptions;
 	}
@@ -16,16 +15,11 @@ public class AVLabels {
 	
 	
 	private String[][] driverConversionOptions = {{"USD", "BRL", "EUR", "GBP", "JPY", "KRW"},{"°C", "K", "°F"}}; //MVConverterOptions
-	//private String[] driverScndConversionOptions = {"OP1", "OP2"}; //MVConverterOptions
 	
 	public String[][] getDriverConversionOptions() { //MVConverterOptions
 		return driverConversionOptions;
 	}
 
-//	public String[] getDriverScndConversionOptions() { //MVConverterOptions
-//		return driverScndConversionOptions;
-//	}
-	
 	
 	
 	private String[] driverInputLabel = {"Original Value: ", "Original Temp: "}; //MV ConverterOptions & MVConversionFrame
