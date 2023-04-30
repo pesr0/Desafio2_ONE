@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 public class AVConvertClass {
 	
+	AVLabels labels = new AVLabels();
 	private double resultConversion;
 	
 	public void convert(String to, String from, String amount) throws IOException{
@@ -20,21 +21,45 @@ public class AVConvertClass {
 	    String jsonString=response.body().string();
 	    JSONObject jsonObject = new JSONObject(jsonString);
 	    this.resultConversion = jsonObject.getDouble("result");
-		}
+	}
 	
-	
-	public String changeValue(String to, String from, String amount) {
-		try {
-			this.convert(to, from, amount);
-			System.out.println(this.resultConversion);
-			
+	public String convertTemp(String to, String from, String amount) {
+		double dAmount = Double.parseDouble(amount);
+		if(from == "°C") {
+			dAmount = dAmount + 273.15;
 		}
-		catch (IOException e) {
-			System.out.println("Exception Error");
-			return "ERROR, TRY AGAIN";
+		else if(from == "°F") {
+			dAmount = (dAmount-32)*5/9+273.15;
 		}
 		
-		return Double.toString(resultConversion);
+		if(to == "K") {
+			return Double.toString(dAmount);
+		}
+		else if(to =="ºC") {
+			return Double.toString(dAmount - 273.15);
+		}
+		else {
+			return Double.toString(dAmount-273.15*9/5+32); 
+		}
+	}
+	
+	public String changeValue(String to, String from, String amount, String converterType) {
+		
+		if(converterType == labels.getDriverConverterOptions()[0]) {
+			try {
+				this.convert(to, from, amount);
+				System.out.println(this.resultConversion);
+				return Double.toString(resultConversion);
+				
+			}
+			catch (IOException e) {
+				System.out.println("Exception Error");
+				return "ERROR, TRY AGAIN";
+			}
+		}
+		else {
+			return this.convertTemp(to, from, amount);
+		}
 	}
 	
 }

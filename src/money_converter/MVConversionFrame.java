@@ -95,7 +95,8 @@ public class MVConversionFrame extends JFrame {
 				String selectedInputType = (String) inputType.getSelectedItem();
 				String selectedOutputType = (String) outputType.getSelectedItem();
 		    	String insertedValue = inputValueTextField.getText();
-		    	String returnValue = converter.changeValue(selectedOutputType, selectedInputType, insertedValue); //method to change the value passed
+		    	String converterType = (String) changeConverter.getSelectedItem();
+		    	String returnValue = converter.changeValue(selectedOutputType, selectedInputType, insertedValue, converterType); //method to change the value passed
 				outputValueTextField.setText(returnValue); //return the value changed to new output field
 
 		    }

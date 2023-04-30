@@ -2,7 +2,7 @@ package money_converter;
 
 public class AVLabels {
 	private String[] driverConverterOptions = {"Coin Converter", "Second Converter --In Progress--"}; //mainConverter
-	private String[] driverConverterVersions = {"Challenge Version", "My Version --In Progress--"}; //mainConverter & AVChooserVersion
+	private String[] driverConverterVersions = {"Challenge Version", "My Version"}; //mainConverter & AVChooserVersion
 	
 
 	public String[] getDriverConverterOptions() { //mainConverter & AVChooserVersion
@@ -15,7 +15,7 @@ public class AVLabels {
 	
 	
 	
-	private String[][] driverConversionOptions = {{"USD", "BRL", "EUR", "GBP", "JPY", "KRW"},{"OP1", "OP2"}}; //MVConverterOptions
+	private String[][] driverConversionOptions = {{"USD", "BRL", "EUR", "GBP", "JPY", "KRW"},{"°C", "K", "°F"}}; //MVConverterOptions
 	//private String[] driverScndConversionOptions = {"OP1", "OP2"}; //MVConverterOptions
 	
 	public String[][] getDriverConversionOptions() { //MVConverterOptions
