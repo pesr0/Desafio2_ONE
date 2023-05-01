@@ -13,24 +13,18 @@ public class MainConverter {
 			
 			int continueProgramMain; //initialize variable which will control the loop
 			do{
-				String chosenCoversionType = new CVOpenCloseChoices().firstChooser();
+				String chosenCoverterType = new CVOpenCloseChoices().firstChooser();
 			
-			switch(chosenCoversionType){
-				case "Coin Converter":
-					CVBoxInputs mainBox = new CVBoxInputs(); //creates object which will invoke dialog boxes
-					String chosenConvertionOption = mainBox.cvConvertionOptions(); //calls conversion options dialog
-					if(chosenConvertionOption==null) return; //stop program if cancel button is clicked
-					float value = mainBox.currencyValueConverter(); // calls dialog box which the value will be inserted. also attribute that value to a string
-					new CVConversionClass().cvConversion(value, chosenConvertionOption, chosenCoversionType); //calls method which converts the initial value and display it
-					break;
-				
-				case "Temperature Converter":
-					System.out.println("test");
-					break;
-			}
+				CVBoxInputs mainBox = new CVBoxInputs(); //creates object which will invoke dialog boxes
+				String chosenConvertionOption = mainBox.cvConvertionOptions(chosenCoverterType); //calls conversion options dialog
+				if(chosenConvertionOption==null) return; //stop program if cancel button is clicked
+				float value = mainBox.currencyValueConverter(); // calls dialog box which the value will be inserted. also attribute that value to a string
+				new CVConversionClass().cvConversion(value, chosenConvertionOption, chosenCoverterType); //calls method which converts the initial value and display it
+
+
 			
-			continueProgramMain = new CVOpenCloseChoices().keepGoin(); //change the variable to get out of the loop if wanted
-			new CVOpenCloseChoices().showsChoice(continueProgramMain); //shows final message
+				continueProgramMain = new CVOpenCloseChoices().keepGoin(); //change the variable to get out of the loop if wanted
+				new CVOpenCloseChoices().showsChoice(continueProgramMain); //shows final message
 			}while(continueProgramMain == 0);
 		}
 		
