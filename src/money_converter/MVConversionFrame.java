@@ -10,104 +10,148 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+
 public class MVConversionFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
 	public MVConversionFrame() {
+		
+		//Make it able to reposition fields into the window frame
 		getContentPane().setLayout(null);
 		
+		//Initialize object to receive constant String and label and a  variable to receive Converter Options
 		AVLabels labels = new AVLabels();
 		String[] converterOptions = labels.getDriverConverterOptions();
-		
-		setSize(400,230); //defines window size
-		setResizable(false); //disable window resizing
-		setLocationRelativeTo(null);
-		setTitle("Converter"); //defines window title
+		//Object created to call convert methods from AVConvertClass
 		AVConvertClass converter = new AVConvertClass();
 		
-		//defines sizes of frames/windows
+		//Defines window frame size
+		setSize(400,230); 
+		//Disable window resizing by user
+		setResizable(false);
+		//By this line, when window frame shows up, it shows in screen center, not in right upper corner
+		setLocationRelativeTo(null);
+		//defines window title
+		setTitle("Converter"); 
+		
+		//defines sizes of some fields inside the window frame
 		int labelX = 30;
 		int fieldX = 160;
 		int inputY = 20;
 		int outputY = 100;
 		
-		String chosenInputLabel = labels.getDriverInputLabel()[0]; //brings of MVConverterOptions Inputs Labels
-		String chosenOutputLabel = labels.getDriverOutputLabel()[0]; //brings of MVConverterOptions Output Labels
-		String[] convertionOption = labels.getDriverConversionOptions()[0]; //brings of MVConverterOptions Convertion Option
+		//Brings from MVConverterOptions the chosen labels 
+		String chosenInputLabel = labels.getDriverInputLabel()[0];
+		String chosenOutputLabel = labels.getDriverOutputLabel()[0];
+		String[] convertionOption = labels.getDriverConversionOptions()[0];
 		
-		JLabel inputLabel = new JLabel(chosenInputLabel); //value field title
-	    inputLabel.setBounds(labelX, inputY, 100, 30); //defines size and position of input label field
-	    inputLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of input label
-	    getContentPane().add(inputLabel); //adds input label to window
+		//Creates, positions, and define the size of labels for input field
+		JLabel inputLabel = new JLabel(chosenInputLabel);
+	    inputLabel.setBounds(labelX, inputY, 100, 30);
+	    inputLabel.setHorizontalAlignment(JLabel.LEFT);
+	    //Adds the field in the frame
+	    getContentPane().add(inputLabel);
 	     
-		JTextField inputValueTextField = new JTextField(); //input value field 
-	    inputValueTextField.setBounds(fieldX, inputY, 200, 30); //defines size and position of input value field
-	    getContentPane().add(inputValueTextField); //adds input value field to window
 	    
-		JLabel outputLabel = new JLabel(chosenOutputLabel); //value field title
-		outputLabel.setBounds(labelX, outputY, 150, 30); //defines size and position of input output field
-		outputLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of output label
-	    getContentPane().add(outputLabel); //adds output label to window
-
-		JTextField outputValueTextField = new JTextField(); //output value field 
-	    outputValueTextField.setBounds(fieldX, outputY, 200, 30); //defines size and position of output value field
-	    getContentPane().add(outputValueTextField); //adds output value field to window
+		//Creates, positions, and define the size of labels for input text field
+		JTextField inputValueTextField = new JTextField(); 
+	    inputValueTextField.setBounds(fieldX, inputY, 200, 30);
+	    //Adds the field in the frame
+	    getContentPane().add(inputValueTextField);
+	    
+	    //Creates, positions, and define the size of labels for output label
+		JLabel outputLabel = new JLabel(chosenOutputLabel);
+		outputLabel.setBounds(labelX, outputY, 150, 30);
+		outputLabel.setHorizontalAlignment(JLabel.LEFT);
+		//Adds the field in the frame
+	    getContentPane().add(outputLabel);
+	    
+	    //Creates, positions, and define the size of labels for output text field
+		JTextField outputValueTextField = new JTextField();
+	    outputValueTextField.setBounds(fieldX, outputY, 200, 30);
+	    //Adds the field in the frame
+	    getContentPane().add(outputValueTextField);
 	    
 	    
+	    //Creates, positions and defines the size of label for Input ComboBox
+		JLabel fromLabel = new JLabel("From: ");
+		fromLabel.setBounds(50, 60, 40, 30);
+		fromLabel.setHorizontalAlignment(JLabel.LEFT);
+		//Adds the label to the window
+	    getContentPane().add(fromLabel);
 	    
-		JLabel fromLabel = new JLabel("From: "); //From title
-		fromLabel.setBounds(50, 60, 40, 30); //defines size and position of from label
-		fromLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of from label
-	    getContentPane().add(fromLabel); //adds from label to window
-	    
-		JComboBox<String> inputType = new JComboBox<>(convertionOption); //adds options of conversion
-		inputType.setBounds(90, 60, 70, 30); //positions the option selection
-		add(inputType); //adds the combobox to the window
+	    //Adds combobox to the window which will give options of conversion to the user (input)
+		JComboBox<String> inputType = new JComboBox<>(convertionOption);
+		inputType.setBounds(90, 60, 70, 30);
+		//adds the combobox to the window
+		add(inputType);
 		
-		JLabel toLabel = new JLabel("To: "); //To title
-		toLabel.setBounds(175, 60, 25, 30); //defines size and position of To label
-		toLabel.setHorizontalAlignment(JLabel.LEFT); //defines position reference of To label
-	    getContentPane().add(toLabel); //adds To label to window
+		//Creates, positions and defines the size of label for Output ComboBox
+		JLabel toLabel = new JLabel("To: ");
+		toLabel.setBounds(175, 60, 25, 30);
+		toLabel.setHorizontalAlignment(JLabel.LEFT);
+		//Adds the label to the window
+	    getContentPane().add(toLabel);
 		
-	    JComboBox<String> outputType = new JComboBox<>(convertionOption); //adds options of conversion
-	    outputType.setBounds(200, 60, 70, 30); //positions the option selection
-	    add(outputType); //adds the combobox to the window
+	    //Adds combobox to the window which will give options of conversion to the user (output)
+	    JComboBox<String> outputType = new JComboBox<>(convertionOption); 
+	    outputType.setBounds(200, 60, 70, 30);
+	    //adds the combobox to the window
+	    add(outputType);
 	    
-	    JButton convertButton = new JButton("Convert"); //creates a button which will convert values
-	    convertButton.setBounds(280, 60, 90, 30); //resize and reposition it 
-	    getContentPane().add(convertButton); //adds it to the window
+	    //Creates, positions and defines the size of the button to effectively convert the values
+	    JButton convertButton = new JButton("Convert");
+	    convertButton.setBounds(280, 60, 90, 30);
+	    //Adds it to the window
+	    getContentPane().add(convertButton);
 	    
 	    
-
-	    JComboBox<String> changeConverter = new JComboBox<>(converterOptions); //adds the type of convertion selection
-	    changeConverter.setBounds(50, 150, 130, 30); //resize and reposition it 
-	    add(changeConverter); //add it to the window
+	    //Creates, opsitions and defines the size of a combobox with options to change the converter
+	    JComboBox<String> changeConverter = new JComboBox<>(converterOptions);
+	    changeConverter.setBounds(50, 150, 130, 30);
+	    //Add it to the window
+	    add(changeConverter);
 	    
-	    JButton changeButton = new JButton("Change Converter"); //creates a button which will be abblt to change the converter
-	    changeButton.setBounds(180, 150, 150, 30); //resize and reposition it 
-	    getContentPane().add(changeButton); //adds it to the window
+	    //Creates, positions, and defines the size of a button to effectively change the converter
+	    JButton changeButton = new JButton("Change Converter");
+	    changeButton.setBounds(180, 150, 150, 30);
+	    //Adds it to the window
+	    getContentPane().add(changeButton);
 	    
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //defines window behavior on close 
+	    //Defines window behavior on close 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		//Adds a listener to the convetion button, when the button is clicked, the converted of value happen
 		convertButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-				//converter.recieveInputValue(inputValueTextField.getText(),(String) inputType.getSelectedItem(),(String) outputType.getSelectedItem()); //pass the field value to the new class
+		    	
 				String selectedInputType = (String) inputType.getSelectedItem();
 				String selectedOutputType = (String) outputType.getSelectedItem();
 		    	String insertedValue = inputValueTextField.getText();
 		    	String converterType = (String) changeConverter.getSelectedItem();
-		    	String returnValue = converter.changeValue(selectedOutputType, selectedInputType, insertedValue, converterType); //method to change the value passed
-				outputValueTextField.setText(returnValue); //return the value changed to new output field
+		    	
+		    	//The .changeValue method receives all the data collected and return the converted value
+		    	String returnValue = converter.changeValue(selectedOutputType, selectedInputType, insertedValue, converterType);
+		    	
+		    	//insert the returned value in the output field
+				outputValueTextField.setText(returnValue);
 
 		    }
 		});
 	
+		//adds a listener to change the converter, according to the combobox value
 		changeButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
+		    	//gets the index of the combobox selected converter in the original ConverterOptions String. To facilitate the ralocations of labels, which will have the ame index
+		    	//this line avoid "if" uses
 		        int index = Arrays.asList(labels.getDriverConverterOptions()).indexOf((String) changeConverter.getSelectedItem());
+		        
+		        //Folowing to lines clears the text fields when the change happens
 		        inputValueTextField.setText("");
 		        outputValueTextField.setText("");
+		        
+		        //change labels content
 		        inputLabel.setText(labels.getDriverInputLabel()[index]);
 		        outputLabel.setText(labels.getDriverOutputLabel()[index]);
 		        inputType.setModel(new DefaultComboBoxModel<>(labels.getDriverConversionOptions()[index]));

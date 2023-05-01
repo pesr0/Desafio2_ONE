@@ -6,9 +6,13 @@ import org.json.JSONObject;
 
 public class AVConvertClass {
 	
+	//Initialize object to reference labels 
 	AVLabels labels = new AVLabels();
+	
+	//Initialize variable to store the conversion result of currency conversion
 	private double resultConversion;
 	
+	//Method to convert currency values, from API "Exchange Rates Data"
 	public void convert(String to, String from, String amount) throws IOException{
 	    OkHttpClient client = new OkHttpClient().newBuilder().build();
 
@@ -23,19 +27,20 @@ public class AVConvertClass {
 	    this.resultConversion = jsonObject.getDouble("result");
 	}
 	
+	//Method to convert temperature values
 	public String convertTemp(String to, String from, String amount) {
 		double dAmount = Double.parseDouble(amount);
-		if(from == "°C") {
+		if(from.equals("°C")) {
 			dAmount = dAmount + 273.15;
 		}
-		else if(from == "°F") {
+		else if(from.equals("°F")) {
 			dAmount = (dAmount-32)*5/9+273.15;
 		}
 		
-		if(to == "K") {
+		if(to.equals("K")) {
 			return Double.toString(dAmount);
 		}
-		else if(to =="°C") {
+		else if(to.equals("°C")) {
 			return Double.toString(dAmount - 273.15);
 		}
 		else {
@@ -43,17 +48,16 @@ public class AVConvertClass {
 		}
 	}
 	
+	//Method which receives values which will be converted. This method choose between both converters (Currency Converter and Temperature Converter) with the variable "converterType"
 	public String changeValue(String to, String from, String amount, String converterType) {
 		
-		if(converterType == labels.getDriverConverterOptions()[0]) {
+		if(converterType.equals(labels.getDriverConverterOptions()[0])) {
 			try {
 				this.convert(to, from, amount);
-				System.out.println(this.resultConversion);
 				return Double.toString(resultConversion);
 				
 			}
 			catch (IOException e) {
-				System.out.println("Exception Error");
 				return "ERROR, TRY AGAIN";
 			}
 		}

@@ -1,35 +1,49 @@
 package money_converter;
 
+/**
+ * 
+ * Class organized in the order:
+ * Variables
+ * Methods to get these variables
+ * 
+ * Other Variables
+ * Other methods ....
+ *
+ */
+
 public class AVLabels {
-	private String[] driverConverterOptions = {"Coin Converter", "Temperature Converter"}; //mainConverter
-	private String[] driverConverterVersions = {"Challenge Version", "My Version"}; //mainConverter & AVChooserVersion
+	private String[] driverConverterOptions = {"Currency Converter", "Temperature Converter"}; 
+	private String[] driverConverterVersions = {"Challenge Version", "My Version"};
 	
-	public String[] getDriverConverterOptions() { //mainConverter & AVChooserVersion
+	public String[] getDriverConverterOptions() {
 		return this.driverConverterOptions;
 	}
 	
-	public String[] getDriverConverterVersions() { //mainConverter
+	public String[] getDriverConverterVersions() {
 		return this.driverConverterVersions;
 	}
 	
 	
 	
-	private String[][] driverConversionOptions = {{"USD", "BRL", "EUR", "GBP", "JPY", "KRW"},{"°C", "K", "°F"}}; //MVConverterOptions
+	private String[][] driverConversionOptions = {
+			{"USD", "BRL", "EUR", "GBP", "JPY", "KRW"},
+			{"°C", "K", "°F"}
+	};
 	
-	public String[][] getDriverConversionOptions() { //MVConverterOptions
+	public String[][] getDriverConversionOptions() {
 		return driverConversionOptions;
 	}
 
 	
 	
-	private String[] driverInputLabel = {"Original Value: ", "Original Temp: "}; //MV ConverterOptions & MVConversionFrame
-	private String[] driverOutputLabel = {"Converted Value: ","Converted Temp: "}; //MV ConverterOptions & MVConversionFrame
-
-	public String[] getDriverInputLabel() { //MV ConverterOptions & MVConversionFrame
+	private String[] driverInputLabel = {"Original Value: ", "Original Temp: "};
+	private String[] driverOutputLabel = {"Converted Value: ","Converted Temp: "};
+	
+	public String[] getDriverInputLabel() {
 		return this.driverInputLabel;
 	}
 
-	public String[] getDriverOutputLabel() { //MV ConverterOptions & MVConversionFrame
+	public String[] getDriverOutputLabel() {
 		return this.driverOutputLabel;
 	}
 	
