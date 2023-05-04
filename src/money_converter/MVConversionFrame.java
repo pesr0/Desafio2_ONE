@@ -69,6 +69,7 @@ public class MVConversionFrame extends JFrame {
 	    
 	    //Creates, positions, and define the size of labels for output text field
 		JTextField outputValueTextField = new JTextField();
+		outputValueTextField.setEditable(false);
 	    outputValueTextField.setBounds(fieldX, outputY, 200, 30);
 	    //Adds the field in the frame
 	    getContentPane().add(outputValueTextField);
